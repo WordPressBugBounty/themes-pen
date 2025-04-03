@@ -182,22 +182,12 @@ body.pen_header_sticky_minimize #pen_header.pen_header_sticked .pen_header_main 
 #pen_header .pen_social_networks {
 	text-align: center;
 }
-#pen_header .pen_social_networks ul {
-	float: left;
-	line-height: 1;
-	width: 100%;
-}
-#pen_header .pen_social_networks ul,
-#pen_header .pen_social_networks li {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
 #pen_header .pen_social_networks a {
 	color: #555;
 	display: inline-block;
 	font-weight: normal;
 	padding: 0 0.25rem;
+	text-align: center;
 	text-decoration: none;
 	transition: color .3s;
 }
@@ -215,7 +205,7 @@ body.pen_header_sticky_minimize #pen_header.pen_header_sticked .pen_header_main 
 	padding-right: 0;
 }
 #pen_header .pen_social_networks a:before {
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 }
 #pen_header .pen_social_networks li {
@@ -223,63 +213,6 @@ body.pen_header_sticky_minimize #pen_header.pen_header_sticked .pen_header_main 
 	font-size: 1.5em;
 	line-height: 1;
 	margin: 0;
-}
-#pen_header .pen_social_networks li.pen_twitter a:before {
-	content: '\f081';
-}
-#pen_header .pen_social_networks li.pen_facebook a:before {
-	content: '\f082';
-}
-#pen_header .pen_social_networks li.pen_instagram a:before {
-	content: '\f16d';
-}
-#pen_header .pen_social_networks li.pen_pinterest a:before {
-	content: '\f0d3';
-}
-#pen_header .pen_social_networks li.pen_linkedin a:before {
-	content: '\f08c';
-}
-#pen_header .pen_social_networks li.pen_bitbucket a:before {
-	content: '\f172';
-}
-#pen_header .pen_social_networks li.pen_flickr a:before {
-	content: '\f16e';
-}
-#pen_header .pen_social_networks li.pen_github a:before {
-	content: '\f1d2';
-}
-#pen_header .pen_social_networks li.pen_slack a:before {
-	content: '\f198';
-}
-#pen_header .pen_social_networks li.pen_skype a:before {
-	content: '\f17e';
-}
-#pen_header .pen_social_networks li.pen_mewe a:before {
-	content: '\f14c';
-}
-#pen_header .pen_social_networks li.pen_vk a:before {
-	content: '\f189';
-}
-#pen_header .pen_social_networks li.pen_telegram a:before {
-	content: '\f2c6';
-}
-#pen_header .pen_social_networks li.pen_whatsapp a:before {
-	content: '\f232';
-}
-#pen_header .pen_social_networks li.pen_rss a:before {
-	content: '\f143';
-}
-#pen_header .pen_social_networks li.pen_email a:before {
-	content: '\f199';
-}
-#pen_header .pen_social_networks li.pen_shop a:before {
-	content: '\f291';
-}
-#pen_header .pen_social_networks li.pen_vimeo a:before {
-	content: '\f194';
-}
-#pen_header .pen_social_networks li.pen_youtube a:before {
-	content: '\f16a';
 }
 #pen_header .pen_header_main input::-webkit-input-placeholder,
 #pen_header .pen_header_main select::-webkit-input-placeholder,

@@ -21,7 +21,6 @@ if ( ! function_exists( 'pen_assets' ) ) {
 
 		$css_files = array(
 			'normalize'  => '/assets/css/plugins/normalize.css',
-			'animate'    => '/assets/css/plugins/animate.css',
 			'base'       => '/assets/css/pen-base.css',
 			'typography' => '/assets/css/pen-typography.css',
 			'tables'     => '/assets/css/pen-tables.css',
@@ -41,6 +40,14 @@ if ( ! function_exists( 'pen_assets' ) ) {
 			'share'      => '/assets/css/pen-share.css',
 			'widgets'    => '/assets/css/pen-widgets.css',
 		);
+
+		if ( ! pen_option_get( 'no_animation' ) ) {
+			$css_files['animate'] = '/assets/css/plugins/animate.css';
+		}
+
+		if ( pen_html_connect( 'header', $content_id ) || pen_html_connect( 'footer', $content_id ) ) {
+			$css_files['connect'] = '/assets/css/pen-connect.css';
+		}
 
 		$search_location = get_post_meta( $content_id, 'pen_content_search_location_override', true );
 		if ( ! $search_location || 'default' === $search_location ) {

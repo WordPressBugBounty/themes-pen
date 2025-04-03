@@ -45,7 +45,7 @@ body.pen_footer_alignment_right #pen_footer .pen_footer_inner {
 #pen_footer .pen_footer_inner nav li.pen_menu_create a:before {
 	content: '\f067';
 	display: inline-block;
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 	margin-right: 0.5rem;
 }
@@ -70,17 +70,6 @@ body.pen_footer_alignment_right #pen_footer .pen_footer_inner {
 }
 body.pen_footer_alignment_center #pen_footer .pen_footer_inner .pen_social_networks {
 	text-align: center;
-}
-#pen_footer .pen_footer_inner .pen_social_networks ul {
-	float: left;
-	line-height: 1;
-	width: 100%;
-}
-#pen_footer .pen_footer_inner .pen_social_networks ul,
-#pen_footer .pen_footer_inner .pen_social_networks li {
-	list-style: none;
-	margin: 0;
-	padding: 0;
 }
 #pen_footer .pen_footer_inner .pen_social_networks li {
 	display: inline-block;
@@ -109,70 +98,13 @@ body.pen_footer_alignment_center #pen_footer .pen_footer_inner .pen_social_netwo
 	text-decoration: none;
 }
 #pen_footer .pen_footer_inner .pen_social_networks a:before {
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 	left: 50%;
 	position: absolute;
 	text-align: center;
 	top: 50%;
 	transform: translate(-50%,-50%);
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_twitter a:before {
-	content: '\f099';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_facebook a:before {
-	content: '\f082';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_instagram a:before {
-	content: '\f16d';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_pinterest a:before {
-	content: '\f231';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_linkedin a:before {
-	content: '\f0e1';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_flickr a:before {
-	content: '\f16e';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_bitbucket a:before {
-	content: '\f171';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_github a:before {
-	content: '\f1d3';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_slack a:before {
-	content: '\f198';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_skype a:before {
-	content: '\f17e';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_mewe a:before {
-	content: '\f124';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_vk a:before {
-	content: '\f189';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_telegram a:before {
-	content: '\f2c6';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_whatsapp a:before {
-	content: '\f232';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_rss a:before {
-	content: '\f09e';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_email a:before {
-	content: '\f0e0';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_shop a:before {
-	content: '\f291';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_vimeo a:before {
-	content: '\f194';
-}
-#pen_footer .pen_footer_inner .pen_social_networks li.pen_youtube a:before {
-	content: '\f16a';
 }
 #pen_footer .pen_footer_inner #pen_footer_menu,
 #pen_footer .pen_footer_inner #pen_footer_menu ul {

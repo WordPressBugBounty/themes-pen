@@ -48,7 +48,7 @@ body.pen_round_corners #main .pen_share li a.pen_button {
 	margin: 0;
 }
 #main .pen_share li a:before {
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 	left: 50%;
 	position: absolute;

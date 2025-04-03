@@ -62,7 +62,7 @@ body.pen_has_woocommerce #page .woocommerce-pagination a.page-numbers {
 #content .posts-navigation .nav-next a:after,
 #content .post-navigation .nav-next a:after {
 	content: '\f101';
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 	margin: 0 0 0 1rem;
 }
@@ -76,7 +76,7 @@ body.pen_has_woocommerce #page .woocommerce-pagination a.page-numbers {
 #content .posts-navigation .nav-previous a:before,
 #content .post-navigation .nav-previous a:before {
 	content: '\f100';
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 	margin: 0 1rem 0 0;
 }
@@ -101,7 +101,7 @@ body.pen_list_plain #content .wp-pagenavi span {
 #content .nextpostslink:before,
 #content .previouspostslink:before {
 	content: '\f105';
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-size: 1.5em;
 	font-weight: normal;
 	left: 50%;

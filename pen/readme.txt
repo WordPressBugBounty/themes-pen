@@ -3,8 +3,8 @@ Contributors: htmlpie
 Tags: blog, custom-background, custom-colors, custom-header, custom-logo, custom-menu, e-commerce, editor-style, featured-image-header, featured-images, flexible-header, footer-widgets, four-columns, full-width-template, grid-layout, left-sidebar, microformats, news, one-column, portfolio, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, three-columns, translation-ready, two-columns, wide-blocks
 Requires at least: 4.8
 Requires PHP: 5.6
-Tested up to: 6.2
-Stable tag: 1.4.7
+Tested up to: 6.8
+Stable tag: 1.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,12 +26,14 @@ No, actually there is no "Pro" version, all the features are available for free,
 
 == Changelog ==
 
+= 1.4.8 =
+* Added header/footer links for 500px, Amazon, BandCamp, Behance, Bitcoin, BlueSky, Discord, Donations, Etsy, Foursquare, GitLab, Goodreads, IMDb, Last.fm, Mastodon, Medium, PayPal, Podcast, Product Hunt, Reddit, Rumble, Snapchat, SoundCloud, Spotify, Stack Exchange, Stack Overflow, Steam, TikTok, Tumblr, Twitch, vCard, WeChat, WordPress, and Xing.
+* Fixed galleries on small screens.
+* Minor improvements.
+
 = 1.4.7 =
 * Improved PHP 8 compatibility
 * WP version bump
-
-= 1.4.6 =
-* Improved PHP 8 compatibility
 
 == Resources ==
 * This theme is based on Underscores https://underscores.me/, (C) Automattic Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
@@ -75,4 +77,3 @@ No, actually there is no "Pro" version, all the features are available for free,
 * Image used in the screenshot.png https://stocksnap.io/photo/A3GOGU0BWF, (C) Patryk Dziejma, [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)
 
 * Images used from the TwentySeventeen theme for the wp-themes.com preview, (C) Alvin Engler, [CC1](https://creativecommons.org/publicdomain/zero/1.0/deed.en)
-

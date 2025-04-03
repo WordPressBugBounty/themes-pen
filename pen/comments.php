@@ -32,7 +32,7 @@ $classes_header = implode( ' ', array_filter( $classes_header ) );
 <div id="comments" class="<?php echo esc_attr( $classes_header ); ?>">
 <?php
 if ( $have_comments ) {
-	$pen_comment_count    = get_comments_number();
+	$pen_comment_count    = (integer) get_comments_number();
 	$pen_comments_display = false;
 	if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
 		$pen_comments_display = true;
@@ -40,7 +40,7 @@ if ( $have_comments ) {
 	?>
 	<h2 class="comments-title">
 	<?php
-	if ( '1' === $pen_comment_count ) {
+	if ( 1 === $pen_comment_count ) {
 		printf(
 			/* Translators: 1: title. */
 			esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'pen' ),
@@ -49,7 +49,7 @@ if ( $have_comments ) {
 	} else {
 		printf(
 			/* Translators: 1: comment count number, 2: title. */
-			esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $pen_comment_count, 'comments title', 'pen' ) ),
+			esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', (string) $pen_comment_count, 'comments title', 'pen' ) ),
 			esc_html( number_format_i18n( $pen_comment_count ) ),
 			'<span>' . wp_kses_post( get_the_title() ) . '</span>'
 		);

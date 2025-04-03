@@ -110,7 +110,7 @@ body.pen_round_corners a#pen_back {
 }
 a#pen_back:before {
 	content: '\f102';
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 }
 a#pen_back:focus,
@@ -183,7 +183,7 @@ body.pen_list_header_icon.search header.pen_content_header h1.pen_content_title:
 body.pen_list_header_icon.tag header.pen_content_header h1.pen_content_title:before {
 	background: linear-gradient(0deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.5) 100%);
 	color: rgba(0,0,0,0.5);
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-size: 2rem;
 	font-weight: normal;
 	height: 78px;
@@ -276,7 +276,7 @@ body.search #primary.no-results .pen_content {
 body.error404 #primary.error-404 .pen_content:before,
 body.search #primary.no-results .pen_content:before {
 	color: rgba(170,170,170,0.25);
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-size: 18em;
 	font-weight: normal;
 	line-height: 1;

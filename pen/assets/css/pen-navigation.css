@@ -67,7 +67,7 @@ body.pen_round_corners #pen_header.pen_search_show_toolbar #pen_navigation {
 #pen_navigation_mobile ul#primary-menu-mobile li.pen_menu_create a:before {
 	content: '\f067';
 	display: inline-block;
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 	margin-right: 0.5em;
 }
@@ -613,7 +613,7 @@ body.pen_navigation_alignment_right #pen_navigation ul#primary-menu > li:first-c
 #pen_navigation ul#primary-menu.sf-arrows .sf-with-ul:before,
 #pen_navigation_mobile li.pen_parent > a:before {
 	content: '\f107';
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 	opacity: 0.5;
 	position: absolute;

@@ -123,7 +123,7 @@ body.pen_round_corners #comments ol.comment-list div.comment-author .photo {
 }
 #comments ol.comment-list .reply a:before {
 	content: '\f075';
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-size: 1.429em;
 	font-weight: normal;
 	left: 1em;
@@ -148,7 +148,7 @@ body.pen_round_corners #comments .comment-awaiting-moderation {
 #comments .no-comments:before,
 #comments .comment-awaiting-moderation:before {
 	content: '\f023';
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 	margin: 0 1rem 0 0;
 }
@@ -180,7 +180,7 @@ body.pen_round_corners #comments .comment-awaiting-moderation {
 }
 #respond h3:before {
 	content: '\f075';
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-size: 1.429em;
 	font-weight: normal;
 	left: 0;
@@ -200,7 +200,8 @@ body.pen_round_corners #comments .comment-awaiting-moderation {
 }
 #comments .comment-subscription-form,
 #comments .comment-form-cookies-consent,
-#comments .akismet_comment_form_privacy_notice {
+#comments .akismet_comment_form_privacy_notice,
+#webmention-form {
 	float: left;
 	margin-bottom: 0.5rem;
 	margin-top: 1rem;
@@ -215,7 +216,8 @@ body.pen_round_corners #comments .comment-awaiting-moderation {
 	position: absolute;
 	top: 0;
 }
-#comments .comment-form-cookies-consent label {
+#comments .comment-form-cookies-consent label,
+#webmention-form label {
 	white-space: normal;
 }
 @media only screen and (min-width:1024px) {

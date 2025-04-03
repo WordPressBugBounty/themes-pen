@@ -1,8 +1,12 @@
-@font-face {
+@font-face { /** Soon to be deleted. */
 	font-family: 'FontAwesome';
-	src: local( 'FontAwesome' ),
-		url('../fonts/fontawesome/fontawesome.woff2') format('woff2'),
-		url('../fonts/fontawesome/fontawesome.woff') format('woff');
+	src: url('../fonts/fontawesome/fontawesome.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Pen_FontAwesome'; /** Avoiding conflicts with CSS from plugins. */
+	src: url('../fonts/fontawesome/fontawesome.woff2') format('woff2');
 	font-weight: normal;
 	font-style: normal;
 }

@@ -1453,7 +1453,7 @@ body.pen_has_buddypress #page .widget.widget_display_replies ul li:before,
 body.pen_has_buddypress #page .widget.widget_display_topics ul li:before,
 body.pen_has_buddypress #page .widget.widget_display_views ul li:before {
 	content: '\f101';
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 	margin: 0 1em 0 0;
 	opacity: 0.75;
@@ -1504,7 +1504,7 @@ body.pen_has_buddypress #page .widget.widget_display_views ul li:before {
 #page .widget ol.wp-block-latest-comments li:before {
 	color: rgba(220,220,220,0.5);
 	content: '\f075';
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-size: 2em;
 	font-weight: normal;
 	left: 0.25em;

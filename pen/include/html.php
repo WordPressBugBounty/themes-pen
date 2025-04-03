@@ -208,17 +208,100 @@ if ( ! function_exists( 'pen_html_connect' ) ) {
 	 * @return string
 	 */
 	function pen_html_connect( $location, $content_id = null ) {
+
 		// For maximum compatibility.
 		if ( is_null( $content_id ) ) {
 			$content_id = pen_post_id();
 		}
 
+		$platforms = array(
+			'500px'          => __( '500px', 'pen' ),
+			'amazon'         => __( 'Amazon', 'pen' ),
+			'bandcamp'       => __( 'BandCamp', 'pen' ),
+			'behance'        => __( 'Behance', 'pen' ),
+			'bitbucket'      => __( 'Bitbucket', 'pen' ),
+			'bitcoin'        => __( 'Bitcoin', 'pen' ),
+			'bluesky'        => __( 'BlueSky', 'pen' ),
+			'coffee'         => __( 'Donate', 'pen' ),
+			'discord'        => __( 'Discord', 'pen' ),
+			'etsy'           => __( 'Etsy', 'pen' ),
+			'facebook'       => __( 'Facebook', 'pen' ),
+			'flickr'         => __( 'Flickr', 'pen' ),
+			'foursquare'     => __( 'Foursquare', 'pen' ),
+			'github'         => __( 'GitHub', 'pen' ),
+			'gitlab'         => __( 'GitLab', 'pen' ),
+			'goodreads'      => __( 'Goodreads', 'pen' ),
+			'imdb'           => __( 'IMDb', 'pen' ),
+			'instagram'      => __( 'Instagram', 'pen' ),
+			'lastfm'         => __( 'Last.fm', 'pen' ),
+			'linkedin'       => __( 'LinkedIn', 'pen' ),
+			'mastodon'       => __( 'Mastodon', 'pen' ),
+			'medium'         => __( 'Medium', 'pen' ),
+			'mewe'           => __( 'MeWe', 'pen' ),
+			'paypal'         => __( 'PayPal', 'pen' ),
+			'pinterest'      => __( 'Pinterest', 'pen' ),
+			'podcast'        => __( 'Podcast', 'pen' ),
+			'producthunt'    => __( 'Product Hunt', 'pen' ),
+			'reddit'         => __( 'Reddit', 'pen' ),
+			'rumble'         => __( 'Rumble', 'pen' ),
+			'shop'           => __( 'Shop', 'pen' ),
+			'skype'          => __( 'Skype', 'pen' ),
+			'slack'          => __( 'Slack', 'pen' ),
+			'snapchat'       => __( 'Snapchat', 'pen' ),
+			'soundcloud'     => __( 'SoundCloud', 'pen' ),
+			'spotify'        => __( 'Spotify', 'pen' ),
+			'stack_exchange' => __( 'Stack Exchange', 'pen' ),
+			'stack_overflow' => __( 'Stack Overflow', 'pen' ),
+			'steam'          => __( 'Steam', 'pen' ),
+			'telegram'       => __( 'Telegram', 'pen' ),
+			'tiktok'         => __( 'TikTok', 'pen' ),
+			'tumblr'         => __( 'Tumblr', 'pen' ),
+			'twitch'         => __( 'Twitch', 'pen' ),
+			'twitter'        => __( 'X.com', 'pen' ),
+			'twitter_legacy' => __( 'X.com', 'pen' ),
+			'vcard'          => __( 'vCard', 'pen' ),
+			'vimeo'          => __( 'Vimeo', 'pen' ),
+			'vk'             => __( 'VK', 'pen' ),
+			'wechat'         => __( 'WeChat', 'pen' ),
+			'whatsapp'       => __( 'WhatsApp', 'pen' ),
+			'wordpress'      => __( 'WordPress', 'pen' ),
+			'xing'           => __( 'Xing', 'pen' ),
+			'youtube'        => __( 'YouTube', 'pen' )
+		);
+
 		ob_start();
+
+		foreach ( $platforms as $platform_alias => $platform_name ) {
+			$platform = pen_option_get( $platform_alias );
+			if ( $platform ) {
+				if ( pen_option_get( $platform_alias . '_' . $location . '_display' ) ) {
+					$urls = explode( '|', $platform );
+					foreach ( $urls as $url ) {
+						?>
+				<li class="pen_<?php echo esc_attr( $platform_alias ); ?>" title="<?php echo esc_attr( $platform_name ); ?>">
+						<?php
+						// esc_url() expects standard protocols like http and https.
+						if ( ! in_array( $platform_alias, array( 'bitcoin', 'skype', 'wechat', 'whatsapp' ), true ) ) {
+							$url = esc_url( $url );
+						}
+						?>
+					<a href="<?php echo esc_attr( $url ); ?>" target="_blank">
+						<span class="pen_element_hidden">
+						<?php
+						echo esc_html( $platform_name );
+						?>
+						</span>
+					</a>
+				</li>
+						<?php
+					}
+				}
+			}
+		}
 
 		$rss_url = pen_option_get( 'rss' );
 		if ( $rss_url ) {
-			$rss_display = pen_option_get( 'rss_' . $location . '_display' );
-			if ( $rss_display ) {
+			if ( pen_option_get( 'rss_' . $location . '_display' ) ) {
 				$rss_url = explode( '|', $rss_url );
 				foreach ( $rss_url as $rss_url ) {
 					?>
@@ -238,16 +321,19 @@ if ( ! function_exists( 'pen_html_connect' ) ) {
 
 		$email = pen_option_get( 'email' );
 		if ( $email ) {
-			$email_display = pen_option_get( 'email_' . $location . '_display' );
-			if ( $email_display ) {
+			if ( pen_option_get( 'email_' . $location . '_display' ) ) {
 				$email = explode( '|', $email );
 				foreach ( $email as $email ) {
-					if ( false !== strpos( $email, '@' ) ) {
+					$email = str_ireplace( 'mailto:', '', $email );
+					if ( filter_var( $email, FILTER_VALIDATE_EMAIL ) ) {
 						$email = 'mailto:' . antispambot( $email );
+					}
+					elseif ( filter_var( $email, FILTER_VALIDATE_URL ) ) {
+						$email = esc_url( $email );
 					}
 					?>
 			<li class="pen_email" title="<?php esc_attr_e( 'E-mail', 'pen' ); ?>">
-				<a href="<?php echo esc_url( $email ); ?>" target="_blank">
+				<a href="<?php echo esc_attr( $email ); ?>" target="_blank">
 					<span class="pen_element_hidden">
 					<?php
 					esc_html_e( 'E-mail', 'pen' );
@@ -260,362 +346,6 @@ if ( ! function_exists( 'pen_html_connect' ) ) {
 			}
 		}
 
-		$facebook_url = pen_option_get( 'facebook' );
-		if ( $facebook_url ) {
-			$facebook_display = pen_option_get( 'facebook_' . $location . '_display' );
-			if ( $facebook_display ) {
-				$facebook_url = explode( '|', $facebook_url );
-				foreach ( $facebook_url as $facebook_url ) {
-					?>
-			<li class="pen_facebook" title="<?php esc_attr_e( 'Facebook', 'pen' ); ?>">
-				<a href="<?php echo esc_url( $facebook_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'Facebook', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$instagram_url = pen_option_get( 'instagram' );
-		if ( $instagram_url ) {
-			$instagram_display = pen_option_get( 'instagram_' . $location . '_display' );
-			if ( $instagram_display ) {
-				$instagram_url = explode( '|', $instagram_url );
-				foreach ( $instagram_url as $instagram_url ) {
-					?>
-			<li class="pen_instagram" title="<?php esc_attr_e( 'Instagram', 'pen' ); ?>">
-				<a href="<?php echo esc_url( $instagram_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'Instagram', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$mewe_url = pen_option_get( 'mewe' );
-		if ( $mewe_url ) {
-			$mewe_display = pen_option_get( 'mewe_' . $location . '_display' );
-			if ( $mewe_display ) {
-				$mewe_url = explode( '|', $mewe_url );
-				foreach ( $mewe_url as $mewe_url ) {
-					?>
-			<li class="pen_mewe" title="<?php esc_attr_e( 'MeWe', 'pen' ); ?>">
-				<a href="<?php echo esc_url( $mewe_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'MeWe', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$vk_url = pen_option_get( 'vk' );
-		if ( $vk_url ) {
-			$vk_display = pen_option_get( 'vk_' . $location . '_display' );
-			if ( $vk_display ) {
-				$vk_url = explode( '|', $vk_url );
-				foreach ( $vk_url as $vk_url ) {
-					?>
-			<li class="pen_vk" title="<?php esc_attr_e( 'VK', 'pen' ); ?>">
-				<a href="<?php echo esc_url( $vk_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'VK', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$pinterest_url = pen_option_get( 'pinterest' );
-		if ( $pinterest_url ) {
-			$pinterest_display = pen_option_get( 'pinterest_' . $location . '_display' );
-			if ( $pinterest_display ) {
-				$pinterest_url = explode( '|', $pinterest_url );
-				foreach ( $pinterest_url as $pinterest_url ) {
-					?>
-			<li class="pen_pinterest" title="<?php esc_attr_e( 'Pinterest', 'pen' ); ?>">
-				<a href="<?php echo esc_url( $pinterest_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'Pinterest', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$twitter_url = pen_option_get( 'twitter' );
-		if ( $twitter_url ) {
-			$twitter_display = pen_option_get( 'twitter_' . $location . '_display' );
-			if ( $twitter_display ) {
-				$twitter_url = explode( '|', $twitter_url );
-				foreach ( $twitter_url as $twitter_url ) {
-					?>
-			<li class="pen_twitter" title="<?php esc_attr_e( 'Twitter', 'pen' ); ?>">
-				<a href="<?php echo esc_url( $twitter_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'Twitter', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$linkedin_url = pen_option_get( 'linkedin' );
-		if ( $linkedin_url ) {
-			$linkedin_display = pen_option_get( 'linkedin_' . $location . '_display' );
-			if ( $linkedin_display ) {
-				$linkedin_url = explode( '|', $linkedin_url );
-				foreach ( $linkedin_url as $linkedin_url ) {
-					?>
-			<li class="pen_linkedin" title="<?php esc_attr_e( 'LinkedIn', 'pen' ); ?>">
-				<a href="<?php echo esc_url( $linkedin_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'LinkedIn', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$bitbucket_url = pen_option_get( 'bitbucket' );
-		if ( $bitbucket_url ) {
-			$bitbucket_display = pen_option_get( 'bitbucket_' . $location . '_display' );
-			if ( $bitbucket_display ) {
-				$bitbucket_url = explode( '|', $bitbucket_url );
-				foreach ( $bitbucket_url as $bitbucket_url ) {
-					?>
-			<li class="pen_bitbucket" title="<?php esc_attr_e( 'Bitbucket', 'pen' ); ?>">
-				<a href="<?php echo esc_url( $bitbucket_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'Bitbucket', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$flickr_url = pen_option_get( 'flickr' );
-		if ( $flickr_url ) {
-			$flickr_display = pen_option_get( 'flickr_' . $location . '_display' );
-			if ( $flickr_display ) {
-				$flickr_url = explode( '|', $flickr_url );
-				foreach ( $flickr_url as $flickr_url ) {
-					?>
-			<li class="pen_flickr" title="<?php esc_attr_e( 'Flickr', 'pen' ); ?>">
-				<a href="<?php echo esc_url( $flickr_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'Flickr', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$github_url = pen_option_get( 'github' );
-		if ( $github_url ) {
-			$github_display = pen_option_get( 'github_' . $location . '_display' );
-			if ( $github_display ) {
-				$github_url = explode( '|', $github_url );
-				foreach ( $github_url as $github_url ) {
-					?>
-			<li class="pen_github" title="<?php esc_attr_e( 'GitHub', 'pen' ); ?>">
-				<a href="<?php echo esc_url( $github_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'GitHub', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$telegram_url = pen_option_get( 'telegram' );
-		if ( $telegram_url ) {
-			$telegram_display = pen_option_get( 'telegram_' . $location . '_display' );
-			if ( $telegram_display ) {
-				$telegram_url = explode( '|', $telegram_url );
-				foreach ( $telegram_url as $telegram_url ) {
-					?>
-			<li class="pen_telegram" title="<?php esc_attr_e( 'Telegram', 'pen' ); ?>">
-				<a href="<?php echo esc_url( $telegram_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'Telegram', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$whatsapp_url = pen_option_get( 'whatsapp' );
-		if ( $whatsapp_url ) {
-			$whatsapp_display = pen_option_get( 'whatsapp_' . $location . '_display' );
-			if ( $whatsapp_display ) {
-				$whatsapp_url = explode( '|', $whatsapp_url );
-				foreach ( $whatsapp_url as $whatsapp_url ) {
-					?>
-			<li class="pen_whatsapp" title="<?php esc_attr_e( 'WhatsApp', 'pen' ); ?>">
-				<a href="<?php echo esc_attr( $whatsapp_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'WhatsApp', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$skype_url = pen_option_get( 'skype' );
-		if ( $skype_url ) {
-			$skype_display = pen_option_get( 'skype_' . $location . '_display' );
-			if ( $skype_display ) {
-				$skype_url = explode( '|', $skype_url );
-				foreach ( $skype_url as $skype_url ) {
-					?>
-			<li class="pen_skype" title="<?php esc_attr_e( 'Skype', 'pen' ); ?>">
-				<a href="<?php echo esc_attr( $skype_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'Skype', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$slack_url = pen_option_get( 'slack' );
-		if ( $slack_url ) {
-			$slack_display = pen_option_get( 'slack_' . $location . '_display' );
-			if ( $slack_display ) {
-				$slack_url = explode( '|', $slack_url );
-				foreach ( $slack_url as $slack_url ) {
-					?>
-			<li class="pen_slack" title="<?php esc_attr_e( 'Slack', 'pen' ); ?>">
-				<a href="<?php echo esc_url( $slack_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'Slack', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$youtube_url = pen_option_get( 'youtube' );
-		if ( $youtube_url ) {
-			$youtube_display = pen_option_get( 'youtube_' . $location . '_display' );
-			if ( $youtube_display ) {
-				$youtube_url = explode( '|', $youtube_url );
-				foreach ( $youtube_url as $youtube_url ) {
-					?>
-			<li class="pen_youtube" title="<?php esc_attr_e( 'YouTube', 'pen' ); ?>">
-				<a href="<?php echo esc_attr( $youtube_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'YouTube', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$shop_url = pen_option_get( 'shop' );
-		if ( $shop_url ) {
-			$shop_display = pen_option_get( 'shop_' . $location . '_display' );
-			if ( $shop_display ) {
-				$shop_url = explode( '|', $shop_url );
-				foreach ( $shop_url as $shop_url ) {
-					?>
-			<li class="pen_shop" title="<?php esc_attr_e( 'Shop Now', 'pen' ); ?>">
-				<a href="<?php echo esc_attr( $shop_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'Shop', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
-
-		$vimeo_url = pen_option_get( 'vimeo' );
-		if ( $vimeo_url ) {
-			$vimeo_display = pen_option_get( 'vimeo_' . $location . '_display' );
-			if ( $vimeo_display ) {
-				$vimeo_url = explode( '|', $vimeo_url );
-				foreach ( $vimeo_url as $vimeo_url ) {
-					?>
-			<li class="pen_vimeo" title="<?php esc_attr_e( 'Vimeo', 'pen' ); ?>">
-				<a href="<?php echo esc_attr( $vimeo_url ); ?>" target="_blank">
-					<span class="pen_element_hidden">
-					<?php
-					esc_html_e( 'Vimeo', 'pen' );
-					?>
-					</span>
-				</a>
-			</li>
-					<?php
-				}
-			}
-		}
 
 		$output = ob_get_clean();
 		if ( $output ) {

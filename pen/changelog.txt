@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 1.4.6 =
+* Improved PHP 8 compatibility
+
 = 1.4.5 =
 * Fixed Skype and some other type of links being removed
 * Fixed the issue with the sticky sidebars going beyond the footer

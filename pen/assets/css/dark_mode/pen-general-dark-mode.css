@@ -111,8 +111,8 @@ body.pen_dark_mode label#pen_dark_mode_toggle {
 	color: #333; /* customizer the same as menu toggle icon */
 }
 label#pen_dark_mode_toggle:before {
-	content: "\f186"; /* Moon */
-	font-family: "FontAwesome";
+	content: '\f186'; /* Moon */
+	font-family: 'Pen_FontAwesome';
 	height: 24px;
 	font-size: 24px;
 	line-height: 1;

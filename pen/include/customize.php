@@ -4598,6 +4598,19 @@ if ( ! function_exists( 'pen_customize_animation' ) ) {
 			)
 		);
 
+		$section = 'pen_section_animation_none';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'No Animation Effects', 'pen' ),
+				'panel' => $panel
+			)
+		);
+
+		$setting_id = "pen_no_animation[$preset]";
+		$label      = __( 'No Animation Effects', 'pen' );
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
 		$section = 'pen_section_animation_header';
 		$wp_customize->add_section(
 			$section,
@@ -5476,32 +5489,340 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 			)
 		);
 
-		$section = 'pen_section_twitter';
+
+
+
+
+		$section = 'pen_section_500px';
 		$wp_customize->add_section(
 			$section,
 			array(
-				'title' => __( 'Twitter', 'pen' ),
-				'panel' => $panel,
+				'title' => __( '500px', 'pen' ),
+				'panel' => 'pen_panel_contact',
 			)
 		);
 
-		$setting_id  = "pen_twitter[$preset]";
+		$setting_id  = "pen_500px[$preset]";
 		$label       = __( 'URL', 'pen' );
-		$description = 'https://twitter.com/example';
+		$description = 'https://500px.com/username';
 		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
 
-		$setting_id = "pen_twitter_header_display[$preset]";
+		$setting_id = "pen_500px_header_display[$preset]";
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
-			__( 'Twitter', 'pen' ),
+			__( '500px', 'pen' ),
 			__( 'Header', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
-		$setting_id = "pen_twitter_footer_display[$preset]";
+		$setting_id = "pen_500px_footer_display[$preset]";
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
-			__( 'Twitter', 'pen' ),
+			__( '500px', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_amazon';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Amazon', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_amazon[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://amazon.com/profile/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_amazon_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Amazon', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_amazon_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Amazon', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_bandcamp';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'BandCamp', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_bandcamp[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://bandcamp.com/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_bandcamp_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'BandCamp', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_bandcamp_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'BandCamp', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_behance';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Behance', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_behance[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://behance.com/profile/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_behance_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Behance', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_behance_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Behance', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_bitbucket';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Bitbucket', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_bitbucket[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://bitbucket.org/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_bitbucket_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Bitbucket', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_bitbucket_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Bitbucket', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_bitcoin';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Bitcoin', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_bitcoin[$preset]";
+		$label       = __( 'Wallet Address', 'pen' );
+		$description = 'bitcoin:address';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_bitcoin_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Bitcoin', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_bitcoin_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Bitcoin', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_bluesky';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'BlueSky', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_bluesky[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://bsky.app/profile/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_bluesky_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'BlueSky', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_bluesky_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'BlueSky', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_coffee';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Donation', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_coffee[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://buymeacoffee.com/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_coffee_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Donation', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_coffee_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Donation', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_discord';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Discord', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_discord[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://discord.com/invite/wordpress';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_discord_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Discord', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_discord_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Discord', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_email';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'E-mail', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_email[$preset]";
+		$label       = __( 'Your e-mail or URL to a "Contact us" page', 'pen' );
+		$description = sprintf(
+			'%s<br>%s',
+			'mail@example.com',
+			'http://example.com/contact-us'
+		);
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_email_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'E-mail', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_email_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'E-mail', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_etsy';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Etsy', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_etsy[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://etsy.com/shop/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_etsy_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Etsy', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_etsy_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Etsy', 'pen' ),
 			__( 'Footer', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
@@ -5517,7 +5838,7 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 
 		$setting_id  = "pen_facebook[$preset]";
 		$label       = __( 'URL', 'pen' );
-		$description = 'https://facebook.com/example';
+		$description = 'https://facebook.com/username';
 		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
 
 		$setting_id = "pen_facebook_header_display[$preset]";
@@ -5536,6 +5857,186 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
+		$section = 'pen_section_flickr';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Flickr', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_flickr[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://www.flickr.com/people/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_flickr_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Flickr', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_flickr_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Flickr', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_foursquare';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Foursquare', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_foursquare[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://foursquare.com/user/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_foursquare_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Foursquare', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_foursquare_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Foursquare', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_github';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'GitHub', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_github[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://github.com/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_github_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'GitHub', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_github_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'GitHub', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_gitlab';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'GitLab', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_gitlab[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://gitlab.com/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_gitlab_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'GitLab', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_gitlab_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'GitLab', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_goodreads';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Goodreads', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_goodreads[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://goodreads.com/user/show/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_goodreads_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Goodreads', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_goodreads_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Goodreads', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_imdb';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'IMDb', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_imdb[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://imdb.com/user/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_imdb_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'IMDb', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_imdb_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'IMDb', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
 		$section = 'pen_section_instagram';
 		$wp_customize->add_section(
 			$section,
@@ -5547,7 +6048,7 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 
 		$setting_id  = "pen_instagram[$preset]";
 		$label       = __( 'URL', 'pen' );
-		$description = 'https://instagram.com/example';
+		$description = 'https://instagram.com/username';
 		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
 
 		$setting_id = "pen_instagram_header_display[$preset]";
@@ -5562,6 +6063,186 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
 			__( 'Instagram', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_lastfm';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Last.fm', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_lastfm[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://last.fm/user/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_lastfm_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Last.fm', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_lastfm_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Last.fm', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_linkedin';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'LinkedIn', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_linkedin[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://linkedin.com/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_linkedin_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'LinkedIn', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_linkedin_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'LinkedIn', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_mastodon';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Mastodon', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_mastodon[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://mastodon.example.com/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_mastodon_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Mastodon', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_mastodon_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Mastodon', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_medium';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Medium', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_medium[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://medium.com/@username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_medium_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Medium', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_medium_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Medium', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_mewe';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'MeWe', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_mewe[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://mewe.com/i/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_mewe_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'MeWe', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_mewe_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'MeWe', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_paypal';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'PayPal', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_paypal[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://www.paypal.me/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_paypal_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'PayPal', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_paypal_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'PayPal', 'pen' ),
 			__( 'Footer', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
@@ -5664,66 +6345,6 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 		);
 		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label );
 
-		$section = 'pen_section_whatsapp';
-		$wp_customize->add_section(
-			$section,
-			array(
-				'title' => __( 'WhatsApp', 'pen' ),
-				'panel' => $panel,
-			)
-		);
-
-		$setting_id  = "pen_whatsapp[$preset]";
-		$label       = __( 'URL', 'pen' );
-		$description = 'whatsapp://send?text=Hi!&phone=+123456789';
-		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
-
-		$setting_id = "pen_whatsapp_header_display[$preset]";
-		$label      = sprintf(
-			'%1$s &rarr; %2$s',
-			__( 'WhatsApp', 'pen' ),
-			__( 'Header', 'pen' )
-		);
-		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
-
-		$setting_id = "pen_whatsapp_footer_display[$preset]";
-		$label      = sprintf(
-			'%1$s &rarr; %2$s',
-			__( 'WhatsApp', 'pen' ),
-			__( 'Footer', 'pen' )
-		);
-		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
-
-		$section = 'pen_section_linkedin';
-		$wp_customize->add_section(
-			$section,
-			array(
-				'title' => __( 'LinkedIn', 'pen' ),
-				'panel' => $panel,
-			)
-		);
-
-		$setting_id  = "pen_linkedin[$preset]";
-		$label       = __( 'URL', 'pen' );
-		$description = 'https://linkedin.com/example';
-		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
-
-		$setting_id = "pen_linkedin_header_display[$preset]";
-		$label      = sprintf(
-			'%1$s &rarr; %2$s',
-			__( 'LinkedIn', 'pen' ),
-			__( 'Header', 'pen' )
-		);
-		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
-
-		$setting_id = "pen_linkedin_footer_display[$preset]";
-		$label      = sprintf(
-			'%1$s &rarr; %2$s',
-			__( 'LinkedIn', 'pen' ),
-			__( 'Footer', 'pen' )
-		);
-		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
-
 		$section = 'pen_section_pinterest';
 		$wp_customize->add_section(
 			$section,
@@ -5735,7 +6356,7 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 
 		$setting_id  = "pen_pinterest[$preset]";
 		$label       = __( 'URL', 'pen' );
-		$description = 'https://pinterest.com/example';
+		$description = 'https://pinterest.com/username';
 		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
 
 		$setting_id = "pen_pinterest_header_display[$preset]";
@@ -5754,92 +6375,182 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
-		$section = 'pen_section_flickr';
+		$section = 'pen_section_podcast';
 		$wp_customize->add_section(
 			$section,
 			array(
-				'title' => __( 'Flickr', 'pen' ),
+				'title' => __( 'Podcast', 'pen' ),
 				'panel' => 'pen_panel_contact',
 			)
 		);
 
-		$setting_id  = "pen_flickr[$preset]";
+		$setting_id  = "pen_podcast[$preset]";
 		$label       = __( 'URL', 'pen' );
-		$description = 'https://flickr.com/example';
+		$description = 'https://siriusxm.com/channels/username';
 		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
 
-		$setting_id = "pen_flickr_header_display[$preset]";
+		$setting_id = "pen_podcast_header_display[$preset]";
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
-			__( 'Flickr', 'pen' ),
+			__( 'Podcast', 'pen' ),
 			__( 'Header', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
-		$setting_id = "pen_flickr_footer_display[$preset]";
+		$setting_id = "pen_podcast_footer_display[$preset]";
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
-			__( 'Flickr', 'pen' ),
+			__( 'Podcast', 'pen' ),
 			__( 'Footer', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
-		$section = 'pen_section_bitbucket';
+		$section = 'pen_section_producthunt';
 		$wp_customize->add_section(
 			$section,
 			array(
-				'title' => __( 'Bitbucket', 'pen' ),
+				'title' => __( 'Product Hunt', 'pen' ),
 				'panel' => 'pen_panel_contact',
 			)
 		);
 
-		$setting_id  = "pen_bitbucket[$preset]";
+		$setting_id  = "pen_producthunt[$preset]";
 		$label       = __( 'URL', 'pen' );
-		$description = 'https://bitbucket.org/example';
+		$description = 'https://producthunt.com/@username';
 		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
 
-		$setting_id = "pen_bitbucket_header_display[$preset]";
+		$setting_id = "pen_producthunt_header_display[$preset]";
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
-			__( 'Bitbucket', 'pen' ),
+			__( 'Product Hunt', 'pen' ),
 			__( 'Header', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
-		$setting_id = "pen_bitbucket_footer_display[$preset]";
+		$setting_id = "pen_producthunt_footer_display[$preset]";
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
-			__( 'Bitbucket', 'pen' ),
+			__( 'Product Hunt', 'pen' ),
 			__( 'Footer', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
-		$section = 'pen_section_github';
+		$section = 'pen_section_reddit';
 		$wp_customize->add_section(
 			$section,
 			array(
-				'title' => __( 'GitHub', 'pen' ),
-				'panel' => 'pen_panel_contact',
+				'title' => __( 'Reddit', 'pen' ),
+				'panel' => $panel,
 			)
 		);
 
-		$setting_id  = "pen_github[$preset]";
+		$setting_id  = "pen_reddit[$preset]";
 		$label       = __( 'URL', 'pen' );
-		$description = 'https://github.com/example';
+		$description = 'https://reddit.com/r/wordpress';
 		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
 
-		$setting_id = "pen_github_header_display[$preset]";
+		$setting_id = "pen_reddit_header_display[$preset]";
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
-			__( 'GitHub', 'pen' ),
+			__( 'Reddit', 'pen' ),
 			__( 'Header', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
-		$setting_id = "pen_github_footer_display[$preset]";
+		$setting_id = "pen_reddit_footer_display[$preset]";
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
-			__( 'GitHub', 'pen' ),
+			__( 'Reddit', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_rss';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Feed', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_rss[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = get_bloginfo( 'rss2_url' );
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_rss_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'RSS', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_rss_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'RSS', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_rumble';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Rumble', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_rumble[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://rumble.com/user/WordPress';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_rumble_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Rumble', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_rumble_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Rumble', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_shop';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Shop', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_shop[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://www.example.com/';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_shop_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Shop', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_shop_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Shop', 'pen' ),
 			__( 'Footer', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
@@ -5885,7 +6596,7 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 
 		$setting_id  = "pen_slack[$preset]";
 		$label       = __( 'URL', 'pen' );
-		$description = 'https://slack.com/example';
+		$description = 'https://wordpress.slack.com/join/shared_invite/something';
 		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
 
 		$setting_id = "pen_slack_header_display[$preset]";
@@ -5904,32 +6615,185 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
-		$section = 'pen_section_mewe';
+		$section = 'pen_section_snapchat';
 		$wp_customize->add_section(
 			$section,
 			array(
-				'title' => __( 'MeWe', 'pen' ),
+				'title' => __( 'Snapchat', 'pen' ),
 				'panel' => $panel,
 			)
 		);
 
-		$setting_id  = "pen_mewe[$preset]";
+		$setting_id  = "pen_snapchat[$preset]";
 		$label       = __( 'URL', 'pen' );
-		$description = 'https://www.mewe.com/join/example';
+		$description = 'https://snapchat.com/add/username';
 		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
 
-		$setting_id = "pen_mewe_header_display[$preset]";
+		$setting_id = "pen_snapchat_header_display[$preset]";
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
-			__( 'MeWe', 'pen' ),
+			__( 'Snapchat', 'pen' ),
 			__( 'Header', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
-		$setting_id = "pen_mewe_footer_display[$preset]";
+		$setting_id = "pen_snapchat_footer_display[$preset]";
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
-			__( 'MeWe', 'pen' ),
+			__( 'Snapchat', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_soundcloud';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'SoundCloud', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_soundcloud[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://soundcloud.com/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_soundcloud_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'SoundCloud', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_soundcloud_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'SoundCloud', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_spotify';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Spotify', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_spotify[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://open.spotify.com/user/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_spotify_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Spotify', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_spotify_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Spotify', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+
+
+
+		$section = 'pen_section_stack_exchange';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Stack Exchange', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_stack_exchange[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://stackexchange.com/users/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_stack_exchange_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Stack Exchange', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_stack_exchange_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Stack Exchange', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_stack_overflow';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Stack Overflow', 'pen' ),
+				'panel' => 'pen_panel_contact',
+			)
+		);
+
+		$setting_id  = "pen_stack_overflow[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://stackoverflow.com/users/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_stack_overflow_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Stack Overflow', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_stack_overflow_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Stack Overflow', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_steam';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Steam', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_steam[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://steamcommunity.com/id/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_steam_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Steam', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_steam_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Steam', 'pen' ),
 			__( 'Footer', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
@@ -5945,7 +6809,7 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 
 		$setting_id  = "pen_telegram[$preset]";
 		$label       = __( 'URL', 'pen' );
-		$description = 'https://t.me/example';
+		$description = 'https://t.me/username';
 		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
 
 		$setting_id = "pen_telegram_header_display[$preset]";
@@ -5964,62 +6828,182 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
-		$section = 'pen_section_vk';
+		$section = 'pen_section_tiktok';
 		$wp_customize->add_section(
 			$section,
 			array(
-				'title' => __( 'VK', 'pen' ),
+				'title' => __( 'TikTok', 'pen' ),
 				'panel' => $panel,
 			)
 		);
 
-		$setting_id  = "pen_vk[$preset]";
+		$setting_id  = "pen_tiktok[$preset]";
 		$label       = __( 'URL', 'pen' );
-		$description = 'https://vk.com/example';
+		$description = 'https://tiktok.com/@username';
 		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
 
-		$setting_id = "pen_vk_header_display[$preset]";
+		$setting_id = "pen_tiktok_header_display[$preset]";
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
-			__( 'VK', 'pen' ),
+			__( 'TikTok', 'pen' ),
 			__( 'Header', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
-		$setting_id = "pen_vk_footer_display[$preset]";
+		$setting_id = "pen_tiktok_footer_display[$preset]";
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
-			__( 'VK', 'pen' ),
+			__( 'TikTok', 'pen' ),
 			__( 'Footer', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
-		$section = 'pen_section_shop';
+		$section = 'pen_section_tumblr';
 		$wp_customize->add_section(
 			$section,
 			array(
-				'title' => __( 'Shop', 'pen' ),
+				'title' => __( 'Tumblr', 'pen' ),
 				'panel' => $panel,
 			)
 		);
 
-		$setting_id  = "pen_shop[$preset]";
+		$setting_id  = "pen_tumblr[$preset]";
 		$label       = __( 'URL', 'pen' );
-		$description = 'https://www.example.com/';
+		$description = 'https://wordpress.tumblr.com/';
 		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
 
-		$setting_id = "pen_shop_header_display[$preset]";
+		$setting_id = "pen_tumblr_header_display[$preset]";
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
-			__( 'Shop', 'pen' ),
+			__( 'Tumblr', 'pen' ),
 			__( 'Header', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
-		$setting_id = "pen_shop_footer_display[$preset]";
+		$setting_id = "pen_tumblr_footer_display[$preset]";
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
-			__( 'Shop', 'pen' ),
+			__( 'Tumblr', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_twitch';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Twitch', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_twitch[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://twitch.tv/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_twitch_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Twitch', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_twitch_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Twitch', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_twitter';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'X.com', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_twitter[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://x.com/wordpress';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_twitter_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'X.com', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_twitter_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'X.com', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_twitter_legacy';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Twitter', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_twitter_legacy[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://x.com/wordpress';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_twitter_legacy_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Twitter', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_twitter_legacy_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Twitter', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_vcard';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'vCard', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_vcard[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://example.com/vcard';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_vcard_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'vCard', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_vcard_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'vCard', 'pen' ),
 			__( 'Footer', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
@@ -6054,6 +7038,156 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
 
+		$section = 'pen_section_vk';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'VK', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_vk[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://vk.com/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_vk_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'VK', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_vk_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'VK', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_wechat';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'WeChat', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_wechat[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'weixin://dl/chat?username=wordpress';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_wechat_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'WeChat', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_wechat_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'WeChat', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_whatsapp';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'WhatsApp', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_whatsapp[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'whatsapp://send?text=Hi!&phone=+123456789';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_whatsapp_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'WhatsApp', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_whatsapp_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'WhatsApp', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_wordpress';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'WordPress', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_wordpress[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://wordpress.org/';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_wordpress_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'WordPress', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_wordpress_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'WordPress', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$section = 'pen_section_xing';
+		$wp_customize->add_section(
+			$section,
+			array(
+				'title' => __( 'Xing', 'pen' ),
+				'panel' => $panel,
+			)
+		);
+
+		$setting_id  = "pen_xing[$preset]";
+		$label       = __( 'URL', 'pen' );
+		$description = 'https://xing.com/profile/username';
+		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
+
+		$setting_id = "pen_xing_header_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Xing', 'pen' ),
+			__( 'Header', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
+		$setting_id = "pen_xing_footer_display[$preset]";
+		$label      = sprintf(
+			'%1$s &rarr; %2$s',
+			__( 'Xing', 'pen' ),
+			__( 'Footer', 'pen' )
+		);
+		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
+
 		$section = 'pen_section_youtube';
 		$wp_customize->add_section(
 			$section,
@@ -6065,7 +7199,7 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 
 		$setting_id  = "pen_youtube[$preset]";
 		$label       = __( 'URL', 'pen' );
-		$description = 'https://youtube.com/wordpress';
+		$description = 'https://youtube.com/c/wordpress';
 		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
 
 		$setting_id = "pen_youtube_header_display[$preset]";
@@ -6080,70 +7214,6 @@ if ( ! function_exists( 'pen_customize_contact' ) ) {
 		$label      = sprintf(
 			'%1$s &rarr; %2$s',
 			__( 'YouTube', 'pen' ),
-			__( 'Footer', 'pen' )
-		);
-		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
-
-		$section = 'pen_section_rss';
-		$wp_customize->add_section(
-			$section,
-			array(
-				'title' => __( 'Feed', 'pen' ),
-				'panel' => $panel,
-			)
-		);
-
-		$setting_id  = "pen_rss[$preset]";
-		$label       = __( 'URL', 'pen' );
-		$description = 'http://example.com/rss.xml';
-		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
-
-		$setting_id = "pen_rss_header_display[$preset]";
-		$label      = sprintf(
-			'%1$s &rarr; %2$s',
-			__( 'RSS', 'pen' ),
-			__( 'Header', 'pen' )
-		);
-		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
-
-		$setting_id = "pen_rss_footer_display[$preset]";
-		$label      = sprintf(
-			'%1$s &rarr; %2$s',
-			__( 'RSS', 'pen' ),
-			__( 'Footer', 'pen' )
-		);
-		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
-
-		$section = 'pen_section_email';
-		$wp_customize->add_section(
-			$section,
-			array(
-				'title' => __( 'E-mail', 'pen' ),
-				'panel' => $panel,
-			)
-		);
-
-		$setting_id  = "pen_email[$preset]";
-		$label       = __( 'Your e-mail or URL to a "Contact us" page', 'pen' );
-		$description = sprintf(
-			'%s<br>%s',
-			'mail@example.com',
-			'http://example.com/contact-us'
-		);
-		pen_control_text( $wp_customize, $setting_id, $section, 'refresh', $label, $description );
-
-		$setting_id = "pen_email_header_display[$preset]";
-		$label      = sprintf(
-			'%1$s &rarr; %2$s',
-			__( 'E-mail', 'pen' ),
-			__( 'Header', 'pen' )
-		);
-		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );
-
-		$setting_id = "pen_email_footer_display[$preset]";
-		$label      = sprintf(
-			'%1$s &rarr; %2$s',
-			__( 'E-mail', 'pen' ),
 			__( 'Footer', 'pen' )
 		);
 		pen_control_checkbox( $wp_customize, $setting_id, $section, 'refresh', $label );

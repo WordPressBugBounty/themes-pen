@@ -380,7 +380,7 @@ body.pen_list_plain #content a.more-link {
 #page a.more-link.pen_icon_arrow:after,
 #page a.more-link.pen_icon_arrow_double:after,
 #page a.more-link.pen_icon_ellipsis:after {
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 }
 #page a.more-link.pen_icon_arrow:after {
@@ -520,7 +520,7 @@ html.js #page .pen_options_overview h3 {
 }
 #page .pen_options_overview h3:before {
 	content: '\f085';
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 	margin: 0 0.5rem 0 0;
 }
@@ -587,7 +587,7 @@ body.pen_multiple #page .pen_options_overview_toggle.pen_visible {
 }
 #page .pen_options_overview_toggle:before {
 	content: '\f085';
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 	margin: 0 1rem 0 0;
 }
@@ -662,7 +662,7 @@ body.pen_multiple #page .pen_options_overview_toggle.pen_visible {
 #main .pen_content_next.pen_icon_arrow:before,
 #main .pen_content_next.pen_icon_arrow_double:before {
 	content: '\f104';
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 	opacity: 0.5;
 	position: absolute;
@@ -694,7 +694,7 @@ body.pen_multiple #page .pen_options_overview_toggle.pen_visible {
 #primary .edit-link a.post-edit-link:before,
 #primary .pen_content_footer .tags-links .pen_heading_tags:before {
 	content: '\f044';
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-weight: normal;
 	margin: 0 1rem 0 0;
 }
@@ -780,7 +780,7 @@ body.pen_list_masonry #primary .pen_content_footer span:last-child a {
 #main .post.sticky > header:before,
 #main .post.sticky > header:after {
 	color: rgba(170,170,170,0.3);
-	font-family: 'FontAwesome';
+	font-family: 'Pen_FontAwesome';
 	font-size: 5em;
 	font-weight: normal;
 	position: absolute;
@@ -1021,6 +1021,11 @@ body.pen_list_masonry.pen_multiple #main header:after {
 	body.pen_list_tiles #pen_tiles .pen_article,
 	body.pen_list_masonry #pen_masonry .pen_article {
 		margin: 0 0 1rem !important;
+	}
+	#main .pen_article,
+	#main .pen_content_wrapper.pen_inside {
+		float: left;
+		width: 100%;
 	}
 	#main .alignleft,
 	#main .aligncenter,

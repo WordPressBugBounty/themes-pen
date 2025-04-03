@@ -33,278 +33,6 @@ if ( ! function_exists( 'pen_configuration' ) ) {
 				'default' => true,
 				'sanitize' => 'pen_sanitize_boolean',
 			),
-			'pen_phone' => array(
-				'default' => '123-456-789',
-				'sanitize' => 'pen_sanitize_string',
-			),
-			'pen_phone_secondary' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_string',
-			),
-			'pen_phone_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_phone_header_animation_reveal' => array(
-				'default' => 'slideInLeft',
-				'sanitize' => 'pen_sanitize_animation',
-			),
-			'pen_phone_header_animation_delay_reveal' => array(
-				'default' => 0,
-				'sanitize' => 'pen_sanitize_integer',
-			),
-			'pen_phone_header_label_display' => array(
-				'default' => false,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_phone_header_label_text' => array(
-				'default' => 'tel',
-				'sanitize' => 'pen_sanitize_string',
-			),
-			'pen_phone_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_phone_footer_animation_reveal' => array(
-				'default' => 'slideInLeft',
-				'sanitize' => 'pen_sanitize_animation',
-			),
-			'pen_phone_footer_animation_delay_reveal' => array(
-				'default' => 0,
-				'sanitize' => 'pen_sanitize_integer',
-			),
-			'pen_phone_footer_label_display' => array(
-				'default' => false,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_phone_footer_label_text' => array(
-				'default' => 'tel',
-				'sanitize' => 'pen_sanitize_string',
-			),
-			'pen_twitter' => array(
-				'default' => PEN_THEME_PREVIEW ? '#' : '',
-				'sanitize' => 'pen_sanitize_url',
-			),
-			'pen_twitter_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_twitter_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_facebook' => array(
-				'default' => PEN_THEME_PREVIEW ? '#' : '',
-				'sanitize' => 'pen_sanitize_url',
-			),
-			'pen_facebook_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_facebook_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_instagram' => array(
-				'default' => PEN_THEME_PREVIEW ? '#' : '',
-				'sanitize' => 'pen_sanitize_url',
-			),
-			'pen_instagram_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_instagram_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_vk' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_string',
-			),
-			'pen_vk_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_vk_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_mewe' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_url',
-			),
-			'pen_mewe_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_mewe_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_pinterest' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_url',
-			),
-			'pen_pinterest_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_pinterest_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_linkedin' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_url',
-			),
-			'pen_linkedin_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_linkedin_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_skype' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_string',
-			),
-			'pen_skype_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_skype_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_telegram' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_string',
-			),
-			'pen_telegram_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_telegram_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_whatsapp' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_string',
-			),
-			'pen_whatsapp_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_whatsapp_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_shop' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_string',
-			),
-			'pen_shop_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_shop_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_vimeo' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_string',
-			),
-			'pen_vimeo_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_vimeo_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_youtube' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_string',
-			),
-			'pen_youtube_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_youtube_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_rss' => array(
-				'default' => get_bloginfo( 'rss2_url' ),
-				'sanitize' => 'pen_sanitize_url',
-			),
-			'pen_rss_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_rss_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_email' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_string',
-			),
-			'pen_email_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_email_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_bitbucket' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_url',
-			),
-			'pen_bitbucket_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_bitbucket_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_flickr' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_url',
-			),
-			'pen_flickr_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_flickr_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_github' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_url',
-			),
-			'pen_github_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_github_footer_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
-			'pen_slack' => array(
-				'default' => '',
-				'sanitize' => 'pen_sanitize_url',
-			),
-			'pen_slack_header_display' => array(
-				'default' => true,
-				'sanitize' => 'pen_sanitize_boolean',
-			),
 			'pen_sidebar_header_primary_animation_reveal' => array(
 				'default' => 'fadeIn',
 				'sanitize' => 'pen_sanitize_animation',
@@ -491,7 +219,8 @@ if ( ! function_exists( 'pen_configuration' ) ) {
 					'preset_14' => true,
 					'preset_15' => true,
 					'preset_16' => false,
-					'preset_17' => false,					'preset_18' => false,
+					'preset_17' => false,
+					'preset_18' => false,
 					'preset_19' => false,
 					'preset_20' => false,
 				),
@@ -5379,6 +5108,690 @@ if ( ! function_exists( 'pen_configuration' ) ) {
 				'default' => '',
 				'sanitize' => 'pen_sanitize_string',
 			),
+			'pen_no_animation' => array(
+				'default' => false,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_500px' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_500px_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_500px_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_amazon' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_amazon_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_amazon_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_bandcamp' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_bandcamp_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_bandcamp_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_behance' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_behance_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_behance_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_bitcoin' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_string',
+			),
+			'pen_bitcoin_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_bitcoin_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_bitbucket' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_bitbucket_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_bitbucket_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_bluesky' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_bluesky_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_bluesky_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_discord' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_discord_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_discord_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_coffee' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_coffee_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_coffee_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_email' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_string',
+			),
+			'pen_email_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_email_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_etsy' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_etsy_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_etsy_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_facebook' => array(
+				'default' => PEN_THEME_PREVIEW ? '#' : '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_facebook_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_facebook_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_flickr' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_flickr_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_flickr_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_foursquare' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_foursquare_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_foursquare_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_github' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_github_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_github_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_gitlab' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_gitlab_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_gitlab_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_goodreads' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_goodreads_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_goodreads_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_imdb' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_imdb_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_imdb_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_instagram' => array(
+				'default' => PEN_THEME_PREVIEW ? '#' : '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_instagram_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_instagram_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_lastfm' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_lastfm_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_lastfm_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_linkedin' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_linkedin_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_linkedin_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_mastodon' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_mastodon_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_mastodon_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_medium' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_medium_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_medium_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_mewe' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_mewe_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_mewe_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_paypal' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_paypal_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_paypal_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_phone' => array(
+				'default' => '123-456-789',
+				'sanitize' => 'pen_sanitize_string',
+			),
+			'pen_phone_secondary' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_string',
+			),
+			'pen_phone_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_phone_header_animation_reveal' => array(
+				'default' => 'slideInLeft',
+				'sanitize' => 'pen_sanitize_animation',
+			),
+			'pen_phone_header_animation_delay_reveal' => array(
+				'default' => 0,
+				'sanitize' => 'pen_sanitize_integer',
+			),
+			'pen_phone_header_label_display' => array(
+				'default' => false,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_phone_header_label_text' => array(
+				'default' => 'tel',
+				'sanitize' => 'pen_sanitize_string',
+			),
+			'pen_phone_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_phone_footer_animation_reveal' => array(
+				'default' => 'slideInLeft',
+				'sanitize' => 'pen_sanitize_animation',
+			),
+			'pen_phone_footer_animation_delay_reveal' => array(
+				'default' => 0,
+				'sanitize' => 'pen_sanitize_integer',
+			),
+			'pen_phone_footer_label_display' => array(
+				'default' => false,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_phone_footer_label_text' => array(
+				'default' => 'tel',
+				'sanitize' => 'pen_sanitize_string',
+			),
+			'pen_pinterest' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_pinterest_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_pinterest_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_podcast' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_podcast_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_podcast_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_producthunt' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_producthunt_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_producthunt_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_reddit' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_reddit_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_reddit_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_rss' => array(
+				'default' => get_bloginfo( 'rss2_url' ),
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_rss_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_rss_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_rumble' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_rumble_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_rumble_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_shop' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_string',
+			),
+			'pen_shop_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_shop_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_skype' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_string',
+			),
+			'pen_skype_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_skype_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_slack' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_slack_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_snapchat' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_snapchat_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_snapchat_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_soundcloud' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_soundcloud_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_soundcloud_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_spotify' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_spotify_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_spotify_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_stack_exchange' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_stack_exchange_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_stack_exchange_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_stack_overflow' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_stack_overflow_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_stack_overflow_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_steam' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_steam_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_steam_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_telegram' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_string',
+			),
+			'pen_telegram_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_telegram_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_tiktok' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_tiktok_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_tiktok_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_tumblr' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_tumblr_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_tumblr_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_twitch' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_twitch_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_twitch_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_twitter' => array(
+				'default' => PEN_THEME_PREVIEW ? '#' : '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_twitter_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_twitter_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_vcard' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_vcard_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_vcard_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_vimeo' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_vimeo_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_vimeo_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_vk' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_vk_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_vk_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_wechat' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_string',
+			),
+			'pen_wechat_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_wechat_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_whatsapp' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_string',
+			),
+			'pen_whatsapp_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_whatsapp_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_wordpress' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_wordpress_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_wordpress_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_xing' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_url',
+			),
+			'pen_xing_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_xing_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_youtube' => array(
+				'default' => '',
+				'sanitize' => 'pen_sanitize_string',
+			),
+			'pen_youtube_header_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			),
+			'pen_youtube_footer_display' => array(
+				'default' => true,
+				'sanitize' => 'pen_sanitize_boolean',
+			)
 			/* phpcs:enable */
 		);
 	}
@@ -5475,6 +5888,13 @@ if ( ! function_exists( 'pen_option_get' ) ) {
 		if ( 'pen_' !== substr( $option, 0, 4 ) ) {
 			$option = 'pen_' . $option;
 		}
+
+		if ( get_theme_mod( 'pen_no_animation', false ) ) {
+			if ( false !== strpos( $option, '_animation_reveal' ) ) {
+				return null;
+			}
+		}
+
 		$default = pen_option_default( $option );
 		if ( is_null( $default ) ) {
 			if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
